@@ -5,9 +5,9 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sheenam.Api", "Sheenam\Sheenam.Api.csproj", "{5667CE0C-54A4-4975-A4F9-62227A922C3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sheenam.Api.Tests.Unit", "Sheenam.Api.Tests.Unit\Sheenam.Api.Tests.Unit.csproj", "{4413EBDC-A7F1-4A24-A258-A7A5E7E88D00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sheenam.Api.Tests.Unit", "Sheenam.Api.Tests.Unit\Sheenam.Api.Tests.Unit.csproj", "{4413EBDC-A7F1-4A24-A258-A7A5E7E88D00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sheenam.Api.Infrastructure.Build", "Sheenam.Api.Infrastructure.Build\Sheenam.Api.Infrastructure.Build.csproj", "{6FF850B4-55BC-4BA3-9AF8-840465133797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sheenam.Api.Infrastructure.Build", "Sheenam.Api.Infrastructure.Build\Sheenam.Api.Infrastructure.Build.csproj", "{6FF850B4-55BC-4BA3-9AF8-840465133797}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
