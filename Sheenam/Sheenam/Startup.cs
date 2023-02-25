@@ -9,8 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Sheenam.Api.Broker.StorageBroker;
 
-namespace Sheenam
+namespace Sheenam.Api
 {
     public class Startup
     {
@@ -25,7 +26,7 @@ namespace Sheenam
         {
 
             services.AddControllers();
-
+            services.AddDbContext<StorageBroker>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sheenam", Version = "v1" });
