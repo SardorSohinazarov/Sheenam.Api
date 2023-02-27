@@ -1,4 +1,4 @@
-name: Sheenam Api Build Project
+name: Build & Test CashOverFlow.Clone
 on:
   push:
     branches:

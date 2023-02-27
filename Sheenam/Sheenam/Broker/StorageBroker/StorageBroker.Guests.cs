@@ -14,7 +14,9 @@ namespace Sheenam.Api.Broker.StorageBroker
         {
             using var broker = new StorageBroker(this.configuration);
 
-            EntityEntry<Guest> guestEntityEntry = await broker.Guests.AddAsync(guest);
+            EntityEntry<Guest> guestEntityEntry = 
+                await broker.Guests.AddAsync(guest);
+
             await broker.SaveChangesAsync();
             return guestEntityEntry.Entity;
         }
