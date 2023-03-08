@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Sheenam.Api.Broker.LoggingBroker;
 using Sheenam.Api.Broker.StorageBroker;
 
 namespace Sheenam.Api
@@ -27,12 +28,18 @@ namespace Sheenam.Api
         {
 
             services.AddControllers();
-            services.AddDbContext<StorageBroker>();
-            services.AddTransient<IStorageBroker, StorageBroker>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sheenam", Version = "v1" });
             });
+            AddServices(services);
+        }
+
+        private static void AddServices(IServiceCollection services)
+        {
+            services.AddDbContext<StorageBroker>();
+            services.AddTransient<IStorageBroker, StorageBroker>();
+            services.AddTransient<ILoggingBroker, LoggingBroker>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
