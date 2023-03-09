@@ -2,10 +2,12 @@
 using Sheenam.Api.Broker.LoggingBroker;
 using Sheenam.Api.Broker.StorageBroker;
 using Sheenam.Api.Models.Foundations.Guests;
+using Sheenam.Api.Services.Foundations.Guests.Exceptions;
+using Xeptions;
 
 namespace Sheenam.Api.Services.Foundations.Guests
 {
-    public class GuestService : IGuestService
+    public partial class GuestService : IGuestService
     {
         private readonly IStorageBroker storageBroker;
         private readonly ILoggingBroker loggingBroker;
@@ -18,9 +20,14 @@ namespace Sheenam.Api.Services.Foundations.Guests
             this.loggingBroker = loggingBroker;
         }
 
-        public ValueTask<Guest> AddGuestAsync(Guest guest)
+
+        //Exception handling -> Exception Noise cansilation
+        public ValueTask<Guest> AddGuestAsync(Guest guest) =>
+        TryCatch(async () =>
         {
-            return this.storageBroker.InsertGuestAsync(guest);
-        }
+            ValidateGuestNotNull(guest);
+
+            return await this.storageBroker.InsertGuestAsync(guest);
+        });
     }
 }

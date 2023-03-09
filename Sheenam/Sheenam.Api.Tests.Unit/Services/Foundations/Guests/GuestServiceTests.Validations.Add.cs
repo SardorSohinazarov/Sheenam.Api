@@ -3,7 +3,7 @@
 // Developed by me :)
 // --------------------------------------------------------
 
-using System.Linq.Expressions;
+using FluentAssertions;
 using Moq;
 using Sheenam.Api.Models.Foundations.Guests;
 using Sheenam.Api.Services.Foundations.Guests.Exceptions;
@@ -27,8 +27,10 @@ public partial class GuestServiceTests
             this.guestService.AddGuestAsync(nullGuest);
 
         //then
-        await Assert.ThrowsAsync<GuestValidationException>(()=>
+        var actualGuestValidation = await Assert.ThrowsAsync<GuestValidationException>(()=>
             AddGuestTask.AsTask());
+
+        actualGuestValidation.Should().BeEquivalentTo(expectedGuestValidationException);
 
         this.loggingBrokerMock.Verify(broker =>
             broker.LogError(It.Is(SameExceptionAs(expectedGuestValidationException))),
