@@ -3,13 +3,14 @@
 // Developed by me :)
 // --------------------------------------------------------
 
-using System.Threading.Tasks;
-using Sheenam.Api.Models.Foundations.Guests;
+using Xeptions;
 
-namespace Sheenam.Api.Services.Foundations.Guests
+namespace Sheenam.Api.Services.Foundations.Guests.Exceptions
 {
-    public interface IGuestService
+    public class NullGuestException:Xeption
     {
-        ValueTask<Guest> AddGuestAsync(Guest guest);
+        public NullGuestException()
+            :base(message:"Guest is null")
+        {}
     }
 }

@@ -3,12 +3,13 @@
 // Developed by me :)
 // --------------------------------------------------------
 
-namespace Sheenam.Api.Models.Foundations.Guests
+using System;
+
+namespace Sheenam.Api.Broker.LoggingBroker
 {
-    public enum GenderType
+    public interface ILoggingBroker
     {
-        Male,
-        Female,
-        Other
+        void LogError(Exception exception);
+        void LogCritical(Exception exception);
     }
 }

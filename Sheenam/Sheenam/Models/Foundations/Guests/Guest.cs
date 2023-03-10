@@ -1,4 +1,9 @@
-﻿using System;
+﻿// --------------------------------------------------------
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Developed by me :)
+// --------------------------------------------------------
+
+using System;
 
 namespace Sheenam.Api.Models.Foundations.Guests
 {
