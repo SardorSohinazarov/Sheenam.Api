@@ -31,10 +31,11 @@ namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
                     .AddGuestAsync(inputGuest);
 
             //then
-            actualGuest.Should().BeEquivalentTo(storageGuest);
+            actualGuest.Should().BeEquivalentTo(expectedGuest);
 
             this.storageBrokerMock.Verify(broker =>
-                broker.InsertGuestAsync(inputGuest),Times.Once);
+                broker.InsertGuestAsync(inputGuest),
+                    Times.Once);
 
             this.storageBrokerMock.VerifyNoOtherCalls();
             this.loggingBrokerMock.VerifyNoOtherCalls();

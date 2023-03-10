@@ -29,7 +29,6 @@ namespace Sheenam.Api.Services.Foundations.Guests
         private GuestValidationException CreateAndLogValidationException(Xeption xeption)
         {
             var guestValidationException = new GuestValidationException(xeption);
-
             this.loggingBroker.LogError(guestValidationException);
 
             return guestValidationException;

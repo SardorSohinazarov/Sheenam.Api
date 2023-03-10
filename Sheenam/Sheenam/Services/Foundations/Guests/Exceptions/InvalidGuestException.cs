@@ -7,11 +7,11 @@ using Xeptions;
 
 namespace Sheenam.Api.Services.Foundations.Guests.Exceptions
 {
-    public class GuestValidationException :Xeption
+    public class InvalidGuestException:Xeption
     {
-        public GuestValidationException(Xeption innerException)
-            :base(message: "Guest is invalid. Please fix the errors and try again.",
-                 innerException:innerException)
-        {}
+        public InvalidGuestException():base(message:"Guest is invalid.")
+        {
+            
+        }
     }
 }
