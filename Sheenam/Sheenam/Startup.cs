@@ -17,10 +17,8 @@ namespace Sheenam.Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
+        public Startup(IConfiguration configuration)=>
             Configuration = configuration;
-        }
 
         public IConfiguration Configuration { get; }
 
@@ -28,10 +26,14 @@ namespace Sheenam.Api
         {
 
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sheenam", Version = "v1" });
+                c.SwaggerDoc(
+                    name:"v1",
+                    info:new OpenApiInfo { Title = "Sheenam", Version = "v1" });
             });
+
             AddServices(services);
         }
 
@@ -49,19 +51,15 @@ namespace Sheenam.Api
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
 
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sheenam v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint(
+                    url:"/swagger/v1/swagger.json", 
+                    name:"Sheenam v1"));
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }

@@ -1,5 +1,9 @@
-﻿using System.Threading.Tasks;
-using FluentAssertions.Common;
+﻿// --------------------------------------------------------
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Developed by me :)
+// --------------------------------------------------------
+
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Sheenam.Api.Models.Foundations.Guests;

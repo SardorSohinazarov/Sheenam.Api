@@ -1,9 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿// --------------------------------------------------------
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Developed by me :)
+// --------------------------------------------------------
+
+using System.Threading.Tasks;
 using Sheenam.Api.Broker.LoggingBroker;
 using Sheenam.Api.Broker.StorageBroker;
 using Sheenam.Api.Models.Foundations.Guests;
-using Sheenam.Api.Services.Foundations.Guests.Exceptions;
-using Xeptions;
 
 namespace Sheenam.Api.Services.Foundations.Guests
 {
@@ -23,11 +26,11 @@ namespace Sheenam.Api.Services.Foundations.Guests
 
         //Exception handling -> Exception Noise cansilation
         public ValueTask<Guest> AddGuestAsync(Guest guest) =>
-        TryCatch(async () =>
-        {
-            ValidateGuestNotNull(guest);
+            TryCatch(async () =>
+            {
+                ValidateGuestNotNull(guest);
 
-            return await this.storageBroker.InsertGuestAsync(guest);
-        });
+                return await this.storageBroker.InsertGuestAsync(guest);
+            });
     }
 }

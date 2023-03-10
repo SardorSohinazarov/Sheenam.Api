@@ -9,7 +9,6 @@ using Sheenam.Api.Broker.LoggingBroker;
 using Sheenam.Api.Broker.StorageBroker;
 using Sheenam.Api.Models.Foundations.Guests;
 using Sheenam.Api.Services.Foundations.Guests;
-using Sheenam.Api.Services.Foundations.Guests.Exceptions;
 using Tynamix.ObjectFiller;
 using Xeptions;
 

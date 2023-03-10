@@ -1,5 +1,9 @@
-﻿using System;
-using Microsoft.Extensions.Logging;
+﻿// --------------------------------------------------------
+// Copyright (c) Coalition of Good-Hearted Engineers
+// Developed by me :)
+// --------------------------------------------------------
+
+using System;
 
 namespace Sheenam.Api.Broker.LoggingBroker
 {
